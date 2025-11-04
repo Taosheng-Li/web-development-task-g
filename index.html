@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Weekly Timetable</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
+  </head>
+
+  <body>
+    <!--
+    Author: Taosheng Li
+    Date: 2025-11-04
+  -->
+
+    <header class="site-header">
+      <h1>Registeration page</h1>
+    </header>
+
+    <main class="content">
+      <div class="top-grid">
+        <section class="student-info" aria-label="Student information">
+          <h2 class="student-info-title">Information</h2>
+          <p><span class="student-name">Taosheng Li</span></p>
+          <p><span class="student-group">NITS24K</span></p>
+        </section>
+
+        <section class="controls" aria-label="Register form">
+          <h2 class="controls-title">Register</h2>
+
+          <form id="addCourseForm" novalidate>
+            <input type="hidden" id="timestamp" name="timestamp" />
+            <div class="form-row">
+              <label for="fullName">Full name</label>
+              <input
+                id="fullName"
+                name="fullName"
+                type="text"
+                placeholder="e.g., James Bond"
+                aria-describedby="hint-fullName err-fullName"
+              />
+              <div class="hint" id="hint-fullName">
+                Please enter at least two words, each with 2+ letters.
+              </div>
+              <div class="error" id="err-fullName" aria-live="polite"></div>
+            </div>
+
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="name@example.com"
+                aria-describedby="err-email"
+              />
+              <div class="error" id="err-email" aria-live="polite"></div>
+            </div>
+
+            <div class="form-row">
+              <label for="phone">Phone</label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                placeholder="+358 401234567 or 040 123 4567"
+                aria-describedby="hint-phone err-phone"
+              />
+              <div class="hint" id="hint-phone">
+                Examples: <code>+358 401234567</code> or
+                <code>040 123 4567</code>. Any country code or leading
+                <code>0</code> works with 7–15 digits total.
+              </div>
+              <div class="error" id="err-phone" aria-live="polite"></div>
+            </div>
+            <div class="form-row">
+              <label for="birthDate">Birth date</label>
+              <input
+                id="birthDate"
+                name="birthDate"
+                type="date"
+                aria-describedby="hint-birthDate err-birthDate"
+              />
+              <div class="hint" id="hint-birthDate">
+                Must not be in the future; minimum age: 13.
+              </div>
+              <div class="error" id="err-birthDate" aria-live="polite"></div>
+            </div>
+
+            <div class="form-row checkbox">
+              <label>
+                <input
+                  id="terms"
+                  name="terms"
+                  type="checkbox"
+                  aria-describedby="err-terms"
+                />
+                I accept the terms.
+              </label>
+              <div class="error" id="err-terms" aria-live="polite"></div>
+            </div>
+
+            <div class="form-row">
+              <button id="addRowBtn" type="submit" class="btn">Submit</button>
+              <button id="clearBtn" type="reset" class="btn btn-secondary">
+                Clear
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
+
+      <div class="table-wrap">
+        <table class="table" id="submissions">
+          <thead>
+            <tr>
+              <th>Timestamp</th>
+              <th>Full name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Birth date</th>
+            </tr>
+          </thead>
+          <tbody id="submissionsBody"></tbody>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>
