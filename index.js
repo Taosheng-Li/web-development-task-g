@@ -1,4 +1,3 @@
-// Format timestamp so table shows YYYY-MM-DD HH:MM:SS without ISO T/Z markers
 function formatTimestamp(date) {
   const pad = (value) => String(value).padStart(2, "0");
   return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(
